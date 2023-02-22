@@ -1,0 +1,8 @@
+.container-login{
+    max-width: 1200px;
+    min-width: 400px;
+    margin: 0 auto;
+}
+.form-login{
+    border: 1px solid red;
+}

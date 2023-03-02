@@ -4,13 +4,11 @@ const btnClose = document.getElementById("btnClose");
 const email = document.getElementById("email").value;
 const password = document.getElementById("password").value;
 
-btnLogin.addEventListener("click", () => {
-    modal.classList.add("modal--show");
-})
+
 
     //ESTE ES EL FETCH CON LA RUTA PARA EL TECNICO. SACA TODOS LOS TÉCNICOS.
 const getAllTecnicos =()=>{
-    fetch(`http://localhost:3000/sanitariabd/tecnico/login`)
+    fetch(`http://localhost:3000/sanitaria/tecnico/login`)
     .then((resp) => {
         return resp.json()
     })
@@ -18,8 +16,8 @@ const getAllTecnicos =()=>{
 
         console.log(respJSON);
         //   respJSON.map((elemento) => {
-        //     cargarProductos(elemento);
-        //     crearTarjetas(elemento);
+        
+			// 	if (elemento.email && elemento.password) {
 
     })
 
@@ -38,6 +36,11 @@ const getAllTecnicos =()=>{
 
 
 
+
+
+btnLogin.addEventListener("click", () => {
+    modal.classList.add("modal--show");
+})
 
 
 

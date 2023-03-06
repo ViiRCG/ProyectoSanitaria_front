@@ -69,6 +69,41 @@ const register = () => {
         .catch(error => console.log(error));
 }
 
+//MODIFICAR DATOS
+
+const modificar = () => {
+    fetch("http://localhost:3000/sanitaria/tecnico/modify"), {
+        method: "PUT",
+        headers: {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify({
+
+            // nombre_tecnico: newTecnico.nombre_tecnico,
+            // apellidos_tecnico: newTecnico.apellidos_tecnico,
+            // curso_tecnico: newTecnico.curso_tecnico,
+            // centro_tecnico: newTecnico.centro_tecnico,
+            // email_tecnico: newTecnico.email_tecnico,
+            // password_tecnico: bcrypt.hashSync(newTecnico.password_tecnico, 10)
+
+        })
+    }
+        .then((resp) => {
+            return resp.json()
+        })
+        .then((respJSON) => {
+
+            console.log(respJSON);
+            //   respJSON.map((elemento) => {
+
+            // 	if (elemento.email && elemento.password) {
+
+        })
+
+
+        .catch(error => console.log(error));
+}
+
 
 
 

@@ -4,12 +4,11 @@ const btnClose = document.getElementById("btnClose");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
 
-
+let token;
 
 
 const login = () => {
-    console.log(email.value);
-    console.log(password.value);
+    
 
     fetch("http://localhost:3000/sanitaria/tecnico/login", {
         method: "POST",
@@ -28,6 +27,7 @@ const login = () => {
         .then((respJSON) => {
             
             console.log(respJSON);
+            token=respJSON.success;
             //   respJSON.map((elemento) => {
 
             // 	if (elemento.email && elemento.password) {

@@ -1,36 +1,38 @@
 const btnLogin = document.getElementById("btnLogin");
 const modal = document.getElementById("modal");
 const btnClose = document.getElementById("btnClose");
-const email = document.getElementById("email").value;
-const password = document.getElementById("password").value;
+const email = document.getElementById("email");
+const password = document.getElementById("password");
 
 
 
-//ESTE ES EL FETCH CON LA RUTA PARA EL TECNICO. SACA TODOS LOS TÉCNICOS.
+
 const login = () => {
-    fetch("http://localhost:3000/sanitaria/tecnico/login"), {
-        method: "GET",
+    console.log(email.value);
+    console.log(password.value);
+
+    fetch("http://localhost:3000/sanitaria/tecnico/login", {
+        method: "POST",
         headers: {
             "Content-type": "application/json"
         },
         body: JSON.stringify({
-            email_tecnico: email,
-            password_tecnico: password,
+            email_tecnico: email.value,
+            password_tecnico: password.value,
 
         })
-    }
+    })
         .then((resp) => {
             return resp.json()
         })
         .then((respJSON) => {
-
+            
             console.log(respJSON);
             //   respJSON.map((elemento) => {
 
             // 	if (elemento.email && elemento.password) {
 
-        })
-
+})
 
         .catch(error => console.log(error));
 }
@@ -151,7 +153,7 @@ btnLogin.addEventListener("click", () => {
 
 btnClose.addEventListener("click", (email, password) => {
     login();
-    modal.classList.remove("modal--show");
+    // modal.classList.remove("modal--show");
 })
 
 

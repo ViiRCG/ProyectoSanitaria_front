@@ -28,3 +28,6 @@
     opacity: 1;
     pointer-events: unset;
 }
+.displaynone{
+    display: none;
+}

@@ -3,8 +3,15 @@ const modal = document.getElementById("modal");
 const btnClose = document.getElementById("btnClose");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
+const logueado = document.getElementById("logueado")
+const nologueado = document.getElementById("nologueado")
 
 let token;
+let array=[];
+let datos = {
+    email_tecnico:email.value,
+    token:token,
+}
 
 
 const login = () => {
@@ -28,6 +35,13 @@ const login = () => {
             
             console.log(respJSON);
             token=respJSON.success;
+            let datos = {
+                email:email.value,
+                token:token,
+            }
+            
+            sessionStorage.setItem("tecnico-token", JSON.stringify(datos))
+            // sessionStorage.setItem("email", JSON.stringify(email.value))
             //   respJSON.map((elemento) => {
 
             // 	if (elemento.email && elemento.password) {
@@ -153,7 +167,13 @@ btnLogin.addEventListener("click", () => {
 
 btnClose.addEventListener("click", (email, password) => {
     login();
-    // modal.classList.remove("modal--show");
+
+    if(token !=""){
+        modal.classList.remove("modal--show");
+        nologueado.classList.add("displaynone");
+        logueado.classList.remove("displaynone");
+    }
+    
 })
 
 

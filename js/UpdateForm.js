@@ -45,25 +45,25 @@ const modificar = () => {
 const cargaSesion=()=>{
     let usuario = JSON.parse(sessionStorage.getItem("tecnico-token"));
     console.log(usuario)
+    let datos = getDatos();
 }
 
 const getDatos=()=>{
-    fetch("http://localhost:3000/sanitaria/tecnico/"), {
+    fetch("http://localhost:3000/sanitaria/tecnico/"+usuario.email), {
         method: "GET",
         headers: {
             "Content-type": "application/json",
-            
         },
-        body: JSON.stringify({
+        // body: JSON.stringify({
 
-            nombre_tecnico: inputUpdateName.value,
-            apellidos_tecnico: inputUpdateApellidos.value,
-            curso_tecnico: inputUpdateEmail.value,
-            centro_tecnico: inputUpdateCentro.value,
-            email_tecnico: inputUpdateCurso.value,
+        //     nombre_tecnico: inputUpdateName.value,
+        //     apellidos_tecnico: inputUpdateApellidos.value,
+        //     curso_tecnico: inputUpdateEmail.value,
+        //     centro_tecnico: inputUpdateCentro.value,
+        //     email_tecnico: inputUpdateCurso.value,
             
 
-        })
+        // })
     }
         .then((resp) => {
             return resp.json()

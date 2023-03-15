@@ -1,0 +1,17 @@
+body{
+    color: #4ca0cc;
+}
+.header {
+    height: 200px;
+}
+
+.cassette {
+    width: 400px;
+    border-radius: 0.50rem;
+    border: 1px solid #4ca0cc;
+    background-color: rgba(231, 236, 240, 0.203);
+    font-variant: small-caps;
+}
+.cassette__title{
+    color: #4ca0cc;
+}

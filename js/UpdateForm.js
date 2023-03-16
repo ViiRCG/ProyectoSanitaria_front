@@ -5,12 +5,13 @@ let inputUpdateCentro = document.getElementById("inputUpdateCentro")
 let inputUpdateCurso = document.getElementById("inputUpdateCurso")
 
 
+let usuario;
 const cargainicial=()=>{
     cargaSesion();
 }
 
 const modificar = () => {
-    fetch("http://localhost:3000/sanitaria/tecnico/modify"), {
+    fetch("http://localhost:3000/sanitaria/tecnico/modify", {
         method: "PUT",
         headers: {
             "Content-type": "application/json"
@@ -25,7 +26,7 @@ const modificar = () => {
             
 
         })
-    }
+    })
         .then((resp) => {
             return resp.json()
         })
@@ -43,13 +44,13 @@ const modificar = () => {
 }
 
 const cargaSesion=()=>{
-    let usuario = JSON.parse(sessionStorage.getItem("tecnico-token"));
+    usuario = JSON.parse(sessionStorage.getItem("tecnico-token"));
     console.log(usuario)
     let datos = getDatos();
 }
 
 const getDatos=()=>{
-    fetch("http://localhost:3000/sanitaria/tecnico/"+usuario.email), {
+    fetch("http://localhost:3000/sanitaria/tecnico/"+usuario.email, {
         method: "GET",
         headers: {
             "Content-type": "application/json",
@@ -64,7 +65,7 @@ const getDatos=()=>{
             
 
         // })
-    }
+    })
         .then((resp) => {
             return resp.json()
         })

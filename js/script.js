@@ -135,11 +135,13 @@ btnLogin.addEventListener("click", () => {
 btnClose.addEventListener("click", (email, password) => {
     login();
 
-    // if(token !=""){
-    //     modal.classList.remove("modal--show");
-    //     nologueado.classList.add("displaynone");
-    //     logueado.classList.remove("displaynone");
-    // }
+    if(token !=""){
+        modal.classList.remove("modal--show");
+        // nologueado.classList.add("displaynone");
+        // logueado.classList.remove("displaynone");
+      
+        window.open("pages/principalCassetes.html")
+    }
     
 })
 
